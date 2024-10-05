@@ -33,6 +33,7 @@
         android:layout_margin="20sp">
 
         <TextView
+            android:id="@+id/res"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|end"
@@ -50,7 +51,7 @@
         android:layout_marginHorizontal="20sp">
 
         <Button
-            android:id="@+id/btn1"
+            android:id="@+id/btnAC"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -59,7 +60,7 @@
             />
 
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -68,7 +69,7 @@
             />
 
         <Button
-            android:id="@+id/btn3"
+            android:id="@+id/btnPerc"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -77,14 +78,13 @@
             />
 
         <Button
-            android:id="@+id/btn4"
+            android:id="@+id/btnDiv"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
             android:text="/"
             />
-
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +95,7 @@
         android:layout_marginHorizontal="20sp">
 
         <Button
-            android:id="@+id/btn5"
+            android:id="@+id/btn7"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -104,7 +104,7 @@
             />
 
         <Button
-            android:id="@+id/btn6"
+            android:id="@+id/btn8"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -113,7 +113,7 @@
             />
 
         <Button
-            android:id="@+id/btn7"
+            android:id="@+id/btn9"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -122,7 +122,7 @@
             />
 
         <Button
-            android:id="@+id/btn8"
+            android:id="@+id/btnMult"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -140,7 +140,7 @@
         android:layout_marginHorizontal="20sp">
 
         <Button
-            android:id="@+id/btn9"
+            android:id="@+id/btn4"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -149,7 +149,7 @@
             />
 
         <Button
-            android:id="@+id/btn10"
+            android:id="@+id/btn5"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -158,7 +158,7 @@
             />
 
         <Button
-            android:id="@+id/btn11"
+            android:id="@+id/btn6"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -167,7 +167,7 @@
             />
 
         <Button
-            android:id="@+id/btn12"
+            android:id="@+id/btnMin"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -185,7 +185,7 @@
         android:layout_marginHorizontal="20sp">
 
         <Button
-            android:id="@+id/btn13"
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -194,7 +194,7 @@
             />
 
         <Button
-            android:id="@+id/btn14"
+            android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -203,7 +203,7 @@
             />
 
         <Button
-            android:id="@+id/btn15"
+            android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -212,14 +212,13 @@
             />
 
         <Button
-            android:id="@+id/btn16"
+            android:id="@+id/btnPlus"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
             android:text="+"
             />
-
     </LinearLayout>
 
     <LinearLayout
@@ -230,7 +229,7 @@
         android:layout_marginHorizontal="20sp">
 
         <Button
-            android:id="@+id/btn17"
+            android:id="@+id/btn0"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -239,7 +238,7 @@
             />
 
         <Button
-            android:id="@+id/btn18"
+            android:id="@+id/btnDot"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -248,7 +247,7 @@
             />
 
         <Button
-            android:id="@+id/btn19"
+            android:id="@+id/btnEquals"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="80dp"
@@ -257,14 +256,13 @@
             />
 
         <Button
-            android:id="@+id/btn20"
+            android:id="@+id/btnDel"
             android:layout_width="wrap_content"
             android:layout_weight="3"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
             android:text="DEL"
             />
-
     </LinearLayout>
 
 

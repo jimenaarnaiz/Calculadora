@@ -2,7 +2,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <shape xmlns:android="http://schemas.android.com/apk/res/android">
-         <solid android:color="@android:color/holo_blue_light"/>  Cambia el color según lo necesites -->
-        <corners android:radius="0dp"/> <!-- Esto establece las esquinas como no redondeadas -->
+          <!-- Esto establece las esquinas como no redondeadas -->
     </shape>
 </selector>
