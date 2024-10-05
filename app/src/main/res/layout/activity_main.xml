@@ -39,7 +39,7 @@
             android:gravity="center_vertical|end"
             android:paddingEnd="10dp"
             android:textSize="25sp"
-            android:text="0,0">
+            android:text="0">
         </TextView>
     </LinearLayout>
 
@@ -60,12 +60,12 @@
             />
 
         <Button
-            android:id="@+id/btn"
+            android:id="@+id/btnDel"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="+/-"
+            android:text="DEL"
             />
 
         <Button
@@ -249,20 +249,13 @@
         <Button
             android:id="@+id/btnEquals"
             android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
             android:text="="
             />
 
-        <Button
-            android:id="@+id/btnDel"
-            android:layout_width="wrap_content"
-            android:layout_weight="3"
-            android:layout_height="80dp"
-            android:backgroundTint="@color/magenta"
-            android:text="DEL"
-            />
+
     </LinearLayout>
 
 
