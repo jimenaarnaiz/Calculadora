@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="del">DEL</string>
+    <string name="Percentage">%</string>
+    <string name="Div">/</string>
+    <string name="dot">.</string>
+    <string name="zero">0</string>
+    <string name="plus">+</string>
+    <string name="mult">*</string>
+</resources>

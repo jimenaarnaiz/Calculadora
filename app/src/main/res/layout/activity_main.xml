@@ -56,7 +56,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="AC"
+            android:text="@string/ac"
             />
 
         <Button
@@ -65,7 +65,7 @@
             android:layout_weight="3"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="DEL"
+            android:text="@string/del"
             />
 
         <Button
@@ -74,7 +74,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="%"
+            android:text="@string/percentage"
             />
 
         <Button
@@ -83,7 +83,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="/"
+            android:text="@string/div"
             />
     </LinearLayout>
 
@@ -127,7 +127,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="*"
+            android:text="@string/mult"
             />
 
     </LinearLayout>
@@ -172,7 +172,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="-"
+            android:text="@string/min"
             />
 
     </LinearLayout>
@@ -217,7 +217,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="+"
+            android:text="@string/plus"
             />
     </LinearLayout>
 
@@ -234,7 +234,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="0"
+            android:text="@string/zero"
             />
 
         <Button
@@ -243,7 +243,7 @@
             android:layout_weight="1"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="."
+            android:text="@string/dot"
             />
 
         <Button
@@ -252,7 +252,7 @@
             android:layout_weight="2"
             android:layout_height="80dp"
             android:backgroundTint="@color/magenta"
-            android:text="="
+            android:text="@string/equals"
             />
 
 

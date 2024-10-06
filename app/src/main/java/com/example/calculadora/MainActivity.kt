@@ -13,7 +13,11 @@ import com.example.calculadora.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private var resIni : String = ""
+    private var txt: String = ""
+    private var operationTxt: String = ""
+    private var num1: Double = 0.0
+    private var num2: Double = 0.0
+    private var op: Char = ' '
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,63 +46,101 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnPerc.setOnClickListener(this)
     }
 
-    //
+    /**
+     *
+     */
     override fun onClick(view: View) {
         when (view.id) {
-            binding.btn0.id -> showAddRes(binding.btn0.text.toString())
-            binding.btn1.id -> showAddRes( binding.btn1.text.toString())
-            binding.btn2.id -> showAddRes( binding.btn2.text.toString())
-            binding.btn3.id -> showAddRes( binding.btn3.text.toString())
-            binding.btn4.id -> showAddRes( binding.btn4.text.toString())
-            binding.btn5.id -> showAddRes( binding.btn5.text.toString())
-            binding.btn6.id -> showAddRes( binding.btn6.text.toString())
-            binding.btn7.id -> showAddRes( binding.btn7.text.toString())
-            binding.btn8.id -> showAddRes( binding.btn8.text.toString())
-            binding.btn9.id -> showAddRes( binding.btn9.text.toString())
-            binding.btnDot.id -> showAddRes( binding.btnDot.text.toString())
+            binding.btn0.id -> showOperation(binding.btn0.text.toString())
+            binding.btn1.id -> showOperation(binding.btn1.text.toString())
+            binding.btn2.id -> showOperation(binding.btn2.text.toString())
+            binding.btn3.id -> showOperation(binding.btn3.text.toString())
+            binding.btn4.id -> showOperation(binding.btn4.text.toString())
+            binding.btn5.id -> showOperation(binding.btn5.text.toString())
+            binding.btn6.id -> showOperation(binding.btn6.text.toString())
+            binding.btn7.id -> showOperation(binding.btn7.text.toString())
+            binding.btn8.id -> showOperation(binding.btn8.text.toString())
+            binding.btn9.id -> showOperation(binding.btn9.text.toString())
+            binding.btnDot.id -> showOperation(binding.btnDot.text.toString())
+            binding.btnPerc.id -> showOperation(binding.btnPerc.text.toString())
+
+            //operadores
+            binding.btnDiv.id -> calculateOp('/')
+
+            binding.btnMult.id -> calculateOp('*')
+
+            binding.btnMin.id ->  calculateOp('-')
+
+            binding.btnPlus.id -> calculateOp('+')
+
             binding.btnEquals.id -> calculateRes()
-            binding.btnDiv.id -> showAddRes( binding.btnDiv.text.toString())
-            binding.btnMult.id -> showAddRes( binding.btnMult.text.toString())
-            binding.btnMin.id -> showAddRes( binding.btnMin.text.toString())
-            binding.btnPlus.id -> showAddRes( binding.btnPlus.text.toString())
-            binding.btnDel.id -> showAddRes(binding.btnDel.text.toString())
-            binding.btnAC.id -> showAddRes(binding.btnAC.text.toString())
-            binding.btnPerc.id -> showAddRes(binding.btnPerc.text.toString())
+
+            //borrado
+            binding.btnDel.id -> delete(binding.btnDel.id)
+            binding.btnAC.id -> delete(binding.btnAC.id)
+        }
+    }
+
+    /**
+     * Función de borrado parcial y total
+     */
+    fun delete(idBtn: Int) {
+        when (idBtn) {
+            // Para borrar un carácter
+            binding.btnDel.id -> {
+                if (txt.isNotEmpty()) {
+                    operationTxt = operationTxt.dropLast(1)
+                }
+                binding.res.text = operationTxt
+            }
+            // Para borrar todo
+            binding.btnAC.id -> {
+                txt = ""
+                operationTxt = ""
+                binding.res.text = ""
+            }
         }
     }
 
     /**
      * Función que muestra en pantalla las operaciones
-     * y se ha implementado la función de borrado
      */
-    fun showAddRes(txtBtn: String) {
-        when (txtBtn) {
-            // Para borrar un carácter
-            binding.btnDel.text -> {
-                if (resIni.isNotEmpty()) {
-                    resIni = resIni.dropLast(1)
-                }
-                binding.res.text = resIni
-            }
-            // Para borrar todo
-            binding.btnAC.text -> {
-                resIni = ""
-                binding.res.text = ""
-            }
-            // Para los números y operadores
-            else -> {
-                resIni += txtBtn
-                binding.res.text = resIni
-            }
+    fun showOperation(txtBtn: String) {
+        txt += txtBtn //para num largos
+        operationTxt += txtBtn
+        binding.res.text = operationTxt
+
+
+    }
+
+
+    /**
+     *
+     */
+    fun calculateOp(op: Char) {
+        num1 = txt.toDouble()
+        this.op = op
+        txt = ""
+        operationTxt += " ${op.toString()} "
+        binding.res.text = operationTxt
+    }
+
+    /**
+     *
+     */
+    fun calculateRes() {
+        num2 = txt.toDouble()
+        var res: Double = 0.0
+
+        when (op) {
+            '+' -> res = num1 + num2
+            '-' -> res = num1 - num2
+            '*' -> res = num1 * num2
+            '/' -> if (num2 != 0.0) num1 / num2 else Double.NaN // Evitar división por 0
         }
+        operationTxt += " = $res"
+        binding.res.text = operationTxt
     }
 
-    fun calculateRes(){
-
-    }
-
-    fun calculateOp(){
-
-    }
 
 }
