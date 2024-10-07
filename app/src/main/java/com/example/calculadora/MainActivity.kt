@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             // Para borrar todo
             binding.btnAC.id -> {
+                op = ' '
                 txt = ""
                 operationTxt = ""
                 binding.res.text = ""
@@ -106,6 +107,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * Función que muestra en pantalla las operaciones
      */
     fun showOperation(txtBtn: String) {
+        if (op == '='){
+            delete(binding.btnAC.id)
+        }
         txt += txtBtn //para num largos
         operationTxt += txtBtn
         binding.res.text = operationTxt
@@ -136,10 +140,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             '+' -> res = num1 + num2
             '-' -> res = num1 - num2
             '*' -> res = num1 * num2
-            '/' -> if (num2 != 0.0) num1 / num2 else Double.NaN // Evitar división por 0
+            '/' -> if (num2 != 0.0) res = num1 / num2 else res = Double.NaN // Evitar división por 0
         }
         operationTxt += " = $res"
         binding.res.text = operationTxt
+        op = '='
     }
 
 
