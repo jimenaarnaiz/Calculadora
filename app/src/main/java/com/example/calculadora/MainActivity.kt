@@ -13,8 +13,8 @@ import com.example.calculadora.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
-    private var txt: String = ""
-    private var operationTxt: String = ""
+    private var txt: String = "" //para mostrar el valor actual
+    private var operationTxt: String = "" //para mostrar operaciones por pantalla
     private var num1: Double = 0.0
     private var num2: Double = 0.0
     private var op: Char = ' '
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     /**
-     *
+     * Asignación de OnClickListener a los botones de la calculadora
      */
     override fun onClick(view: View) {
         when (view.id) {
@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             binding.btn8.id -> showOperation(binding.btn8.text.toString())
             binding.btn9.id -> showOperation(binding.btn9.text.toString())
             binding.btnDot.id -> showOperation(binding.btnDot.text.toString())
-            binding.btnPerc.id -> showOperation(binding.btnPerc.text.toString())
 
             //operadores
             binding.btnDiv.id -> calculateOp('/')
@@ -75,6 +74,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             binding.btnEquals.id -> calculateRes()
 
+            binding.btnPerc.id -> calculatePerc()
+
             //borrado
             binding.btnDel.id -> delete(binding.btnDel.id)
             binding.btnAC.id -> delete(binding.btnAC.id)
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     /**
      * Función de borrado parcial y total
+     * Permite borrar un carácter o limpiar completamente la pantalla
      */
     fun delete(idBtn: Int) {
         when (idBtn) {
@@ -104,22 +106,33 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     /**
-     * Función que muestra en pantalla las operaciones
+     * Función que muestra en pantalla los números
      */
     fun showOperation(txtBtn: String) {
-        if (op == '='){
+        if (op == '='){ // Reinicia si el último operador fue '='
             delete(binding.btnAC.id)
         }
         txt += txtBtn //para num largos
         operationTxt += txtBtn
         binding.res.text = operationTxt
-
-
     }
 
+    /**
+     *  Calcula el porcentaje del número actual ingresado.
+     *  Reemplaza el número por su valor porcentual en la pantalla
+     */
+    fun calculatePerc() {
+        if (txt.isNotEmpty()) {
+            val number = txt.toDouble() / 100
+            txt = number.toString() // actualizamos txt con el valor del porcentaje
+            operationTxt = operationTxt.dropLast(1) //quitamos el valor entero para poner el del % calculado
+            operationTxt += "$number"
+            binding.res.text = operationTxt // mostramos el resultado
+        }
+    }
 
     /**
-     *
+     * Almacena el operador seleccionado y el primer número ingresado y lo muestra por pantalla
      */
     fun calculateOp(op: Char) {
         num1 = txt.toDouble()
@@ -130,7 +143,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     /**
-     *
+     * Realiza el cálculo con el operador y los dos números ingresados
+     * Actualiza el resultado en la pantalla
      */
     fun calculateRes() {
         num2 = txt.toDouble()
